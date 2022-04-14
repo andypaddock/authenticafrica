@@ -1,0 +1,34 @@
+.u-center-text {
+  text-align: center !important;
+}
+.u-margin-default {
+  margin: 0;
+}
+.u-margin-medium {
+  margin: 5rem;
+
+  @include respond(phone) {
+    margin: 3rem;
+  }
+}
+.u-margin-bottom {
+  margin-bottom: 5rem;
+
+  @include respond(phone) {
+    margin-bottom: 3rem;
+  }
+}
+.u-margin-top {
+  margin-top: 5rem;
+
+  @include respond(phone) {
+    margin-top: 3rem;
+  }
+}
+@for $i from 1 through 10 {
+  $base: 10;
+  $offset: $base * $i;
+  .imageoff-#{$offset} {
+    background-position: $offset + 0% center !important;
+  }
+}

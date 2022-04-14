@@ -1,0 +1,252 @@
+.section-text {
+  text-align: center;
+  .heading-tertiary {
+    font-family: $alt-font-style;
+    font-style: italic;
+    color: $color-primary;
+    font-weight: 700;
+    padding: 2rem 0;
+  }
+  .centre-line {
+    display: flex;
+    div {
+      flex: 1;
+    }
+  }
+  .line {
+    border-right: 1px solid $color-black;
+    height: 2rem;
+  }
+  &.para {
+    min-height: 45rem;
+    @include backgroundPara;
+  }
+  .text-para {
+    padding: 2rem 0;
+    p {
+      text-align: left;
+    }
+    &.center-text p {
+      text-align: center;
+    }
+  }
+  .site-wide-steps {
+    display: flex;
+    .heading-primary {
+      font-size: 2.5rem;
+      font-weight: 100;
+      text-transform: uppercase;
+    }
+    .left-col {
+      flex: 1;
+      padding: 2rem 5rem;
+      text-align: left;
+      .heading-primary {
+        padding-left: 9rem;
+      }
+    }
+    .right-col {
+      flex: 1;
+      padding: 2rem 5rem;
+      text-align: left;
+      .heading-primary {
+        padding-left: 2rem;
+      }
+      .button {
+        position: relative;
+      }
+    }
+    i {
+      font-size: 3rem;
+      color: $color-primary;
+      &.fa-chevron-right:before {
+        font-size: 2rem;
+        color: $color-black;
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+    .items {
+      padding: 2rem 0;
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      align-items: center;
+      grid-gap: 2rem;
+      .icon {
+        justify-self: center;
+      }
+    }
+    .right-text {
+      padding: 2rem 0 2rem 2rem;
+    }
+  }
+}
+.section-title {
+  text-align: center;
+  padding: 5rem 0 0;
+  .alt-text {
+    color: $color-white;
+  }
+}
+.count2 {
+  columns: 2;
+  column-gap: 3rem;
+}
+.image-text-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  padding: 5rem 0;
+  .text {
+    padding: 0rem 20% 2rem 2rem;
+    .heading-secondary {
+      padding-right: 5rem;
+      // font-size: 6rem;
+    }
+    .heading-tertiary {
+      padding: 1.5rem 0;
+    }
+    .button {
+      margin-top: 2rem;
+    }
+  }
+  .image {
+    @include backgroundCover;
+    height: 35rem;
+  }
+  &.row-reverse {
+    flex-direction: row-reverse;
+    .text {
+      order: 1;
+      padding: 0rem 2rem 2rem 20%;
+    }
+    .image {
+      order: 2;
+    }
+  }
+}
+.staff-block {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 2rem;
+  margin-bottom: 2rem;
+  .text {
+    padding: 0rem 0 0 2rem;
+    .heading-secondary {
+      padding-right: 5rem;
+      font-size: 5rem;
+    }
+    .heading-tertiary {
+      // padding: 1.5rem 0;
+      &.underscores:after {
+        padding-top: 0.5rem;
+      }
+    }
+    .content-text {
+      p {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+      }
+    }
+    .button {
+      margin: 0;
+      padding: 0;
+      display: block;
+      font-style: italic;
+    }
+  }
+  .image {
+    @include backgroundCover;
+  }
+}
+.optional-header {
+  text-align: center;
+}
+.alt-bg {
+  .image-text-block {
+    .text {
+      padding: 0 2rem;
+    }
+    .heading-secondary {
+      padding-right: 0;
+      font-family: $alt-font-header;
+      font-size: 4rem;
+    }
+  }
+}
+.w80,
+.w60,
+.w40 {
+  .image-text-block {
+    .text {
+      padding: 0 0 2rem 2rem;
+    }
+  }
+}
+.simple-text-block {
+  .call-out {
+    float: right;
+    width: 25rem;
+    margin-right: -10rem;
+    margin-top: -5rem;
+    color: $color-primary;
+    font-weight: 400;
+    padding: 2rem;
+  }
+  .heading-secondary {
+    font-family: $alt-font-header;
+  }
+  .heading-tertiary {
+    font-family: $alt-font-header;
+  }
+
+  .overscores {
+    &::before {
+      margin-bottom: 1.5rem;
+    }
+  }
+  .underscores {
+    &::after {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+.section-imagetext {
+  .image-text-block {
+    image {
+      height: 25rem;
+    }
+    .read-more,
+    .read-less {
+      text-align: left;
+      a {
+        font-style: italic;
+        &::before {
+          content: none;
+        }
+      }
+    }
+  }
+}
+.staff-block {
+  .read-more,
+  .read-less {
+    text-align: left;
+    padding-top: 2rem;
+    a {
+      font-style: italic;
+      color: $color-black;
+      &::before {
+        content: "";
+        border-bottom: 1px solid $color-primary;
+        border-right: none;
+        left: 0;
+        width: 2rem;
+        display: block;
+        padding-top: 2rem;
+      }
+    }
+  }
+}

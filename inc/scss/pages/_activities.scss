@@ -1,0 +1,25 @@
+.section-activities-block {
+    .row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2rem;
+        .image-block {
+            @include backgroundCover;
+            height: 30rem;
+            justify-content: center;
+            .style-text {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                a{
+                    color: $color-white;
+                }
+            }
+            a.arrow {
+color: $color-white;
+text-align: right;
+            }
+        }
+    }
+}

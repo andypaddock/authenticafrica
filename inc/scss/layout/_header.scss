@@ -1,0 +1,131 @@
+.header {
+  margin-top: 10rem;
+  @include respond(tab-port) {
+    margin-top: 0;
+  }
+  &.v25 {
+    height: 25vh;
+  }
+  &.v50 {
+    height: 50vh;
+  }
+  &.v75 {
+    height: 75vh;
+  }
+  &.v100 {
+    height: 100vh;
+  }
+  @include respond(tab-port) {
+    height: 100vh !important;
+  }
+  // &__logo-box {
+  //   position: absolute;
+  //   top: 4rem;
+  //   left: 4rem;
+  // }
+
+  // &__logo {
+  //   height: 3.5rem;
+  // }
+
+  &__text-box {
+    text-align: center;
+  }
+  &__quote-box {
+    text-align: center;
+  }
+  .hero {
+    height: 100%;
+    position: relative;
+    @include backgroundCover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+  video#bgvideo {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+  }
+}
+.archive .header {
+  height: 50vh;
+}
+.text-fade {
+  position: relative;
+
+  blockquote {
+    margin: 0;
+    font-size: 50px;
+    position: absolute;
+    right: 20px;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    &:first-of-type {
+      animation: quote-fade 3s 1;
+      -webkit-animation: quote-fade 3s 1;
+      animation-fill-mode: forwards;
+
+      animation-delay: 4s;
+      -webkit-animation-delay: 4s; /* Safari and Chrome */
+      -webkit-animation-fill-mode: forwards;
+    }
+    &:nth-of-type(2) {
+      opacity: 0;
+      animation: quote-fade-in 3s 1;
+      -webkit-animation: quote-fade-in 3s 1;
+      animation-fill-mode: forwards;
+
+      animation-delay: 6s;
+      -webkit-animation-delay: 6s; /* Safari and Chrome */
+      -webkit-animation-fill-mode: forwards;
+    }
+  }
+}
+@keyframes quote-fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes quote-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.section-links {
+  .feature-box {
+    svg {
+      #head,
+      #body {
+        fill: $color-primary;
+      }
+    }
+  }
+  a {
+    color: $color-white;
+    text-decoration: none;
+    &.active {
+      .feature-box {
+        background: $color-primary;
+        svg {
+          #head,
+          #body {
+            fill: $color-white;
+          }
+        }
+      }
+    }
+  }
+}

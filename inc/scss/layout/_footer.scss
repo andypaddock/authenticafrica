@@ -1,0 +1,323 @@
+.footer {
+  font-size: 1.4rem;
+  color: $color-white;
+  background: $color-black;
+  font-family: "work-sans", sans-serif;
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
+  &__logo-box {
+    text-align: center;
+    margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__logo {
+    width: 15rem;
+    height: auto;
+  }
+
+  &__navigation {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      color: $color-grey-light-1;
+      background-color: $color-grey-dark-3;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      transform: rotate(5deg) scale(1.3);
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+    width: 80%;
+    float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
+  }
+}
+.footer-navbar {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 1fr 1fr 3fr;
+  grid-template-rows: repeat(2, 1fr);
+  padding: 3rem 0;
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav {
+    padding: 3rem 0;
+    ul {
+      list-style: none;
+      column-count: 3;
+      li {
+        border-left: 1px solid $color-primary;
+
+        a {
+          color: $color-white;
+          text-transform: uppercase;
+          text-decoration: none;
+          padding: 2rem;
+        }
+      }
+    }
+  }
+  .company-links {
+    grid-column: 2 / span 4;
+    grid-row: 2;
+    img {
+      height: 5rem;
+    }
+  }
+  .newsletter-block {
+    padding-left: 3rem;
+    grid-row: span 2;
+    .mc4wp-form-fields {
+      padding: 2rem 0;
+      input {
+        color: $color-primary;
+        background: $color-white;
+        padding: 1rem 3rem;
+        border: none;
+        margin-right: 0.5rem;
+      }
+      input[type="submit"] {
+        border-radius: 2rem;
+        background: $color-primary;
+        width: 100%;
+        color: $color-white;
+      }
+    }
+    .mc4wp-form ::-webkit-input-placeholder {
+      color: $color-primary;
+      opacity: 1;
+    }
+    .name {
+      display: flex;
+      justify-content: space-between;
+      grid-gap: 0.5rem;
+      padding-bottom: 1rem;
+      @include respond(tab-port) {
+        flex-direction: column;
+        padding-bottom: 0.5rem;
+        input {
+          width: 100%;
+        }
+        label {
+          padding-bottom: 0.5rem;
+        }
+      }
+    }
+    .email {
+      margin-right: 0.5rem;
+      @include respond(tab-port) {
+        margin: 0;
+      }
+      input {
+        width: 100%;
+      }
+    }
+    .news-terms {
+      font-size: 1.1rem;
+      padding: 1rem 0;
+    }
+  }
+
+  .heading-tertiary {
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding-bottom: 1rem;
+    font-family: $default-font-style;
+  }
+  .contact-details {
+    p {
+      font-size: 1.2rem;
+    }
+    .lower-footer-links {
+      padding-right: 1rem;
+    }
+  }
+  .lower-footer-links {
+    li {
+      list-style: none;
+      padding: 0.5rem 0;
+      font-size: 1rem;
+      a {
+        color: $color-white;
+      }
+    }
+  }
+  .social-links {
+    display: flex;
+    grid-gap: 2rem;
+    justify-content: center;
+    li {
+      list-style: none;
+
+      i {
+        color: $color-white;
+        font-size: 1.7rem;
+      }
+    }
+  }
+  .privacy {
+    padding: 3rem 0;
+    ul {
+      list-style: none;
+      li {
+        border-left: 1px solid $color-primary;
+        a {
+          color: $color-white;
+          text-decoration: none;
+          padding: 2rem;
+        }
+        span {
+          padding: 2rem;
+        }
+      }
+    }
+  }
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .nav ul {
+      column-count: 2;
+    }
+  }
+}
+.footer-message {
+  .footer-hero {
+    height: 50rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    @include backgroundCover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .centre-line {
+      display: flex;
+      padding: 1rem;
+      div {
+        flex: 1;
+      }
+    }
+    .line {
+      border-right: 1px solid $color-white;
+      height: 3rem;
+      padding-top: 1rem;
+    }
+
+    .footer_text {
+      width: 35%;
+      margin-left: 20%;
+      @include respond(tab-port) {
+        width: unset;
+        margin: 0;
+      }
+      .heading-secondary {
+        color: $color-white;
+        &--sub {
+          color: $color-white;
+          font-weight: 400;
+        }
+      }
+      p {
+        display: block;
+        color: $color-white;
+        padding: 1rem 0;
+      }
+      .underscores:after {
+        border-bottom: 1px solid $color-white;
+      }
+    }
+    .footer_link {
+      border: 1px solid $color-white;
+      border-radius: 4rem;
+      padding: 2rem 4rem 2rem;
+      margin-bottom: 2rem;
+      @include respond(tab-port) {
+        margin: 0;
+      }
+      .footer_button {
+        display: block;
+        color: $color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        font-weight: 700;
+        &:hover {
+          &:after {
+            content: "\f054";
+            font-family: "Font Awesome 6 Pro";
+            font-weight: 300;
+            transition: all ease 0.5s;
+            position: absolute;
+            right: 0rem;
+          }
+        }
+
+        &:after {
+          content: "\f054";
+          font-family: "Font Awesome 6 Pro";
+          font-weight: 300;
+          transition: all ease 0.5s;
+          position: absolute;
+          right: 1rem;
+        }
+      }
+      a {
+        color: $color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 2.1rem;
+        position: relative;
+      }
+    }
+  }
+}

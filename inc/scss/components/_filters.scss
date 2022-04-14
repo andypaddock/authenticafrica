@@ -1,0 +1,52 @@
+.filter-grid {
+  .filter-item {
+    background: $color-white;
+    &--image {
+      @include backgroundCover;
+      height: 30rem;
+    }
+    &--text {
+      padding: 2rem 3rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      align-items: center;
+      a {
+        color: $color-black;
+      }
+      .right_arrow {
+        padding: 2rem;
+      }
+    }
+  }
+  .sep {
+    padding: 0 0.5rem;
+  }
+}
+.controls {
+  ul li {
+    color: $color-black;
+  }
+}
+.controls {
+  padding: 5rem 0;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+    color: $color-primary;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    li {
+      &:first-of-type {
+        font-weight: 200;
+        cursor: none;
+      }
+      &.mixitup-control-active {
+        font-weight: 700;
+      }
+    }
+  }
+}

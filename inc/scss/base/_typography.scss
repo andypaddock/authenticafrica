@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Raleway:ital,wght@0,200;0,300;0,400;0,600;1,100&display=swap');
+body {
+  font-family: $default-font-style;
+  font-size: $default-font-size;
+  font-weight: 300;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: $color-text;
+}
+
+.heading-primary {
+  font-family: $default-header-style;
+  backface-visibility: hidden;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    line-height: 1.1;
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
+    /*
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+        */
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    animation: moveInRight 1s ease-out;
+    color: $color-primary;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
+  &.light-hero {
+    color: $color-white;
+  }
+  .alt-font {
+    font-family: $alt-font-header;
+  }
+}
+
+.heading-secondary {
+  font-family: $default-header-style;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 400;
+  // display: inline-block;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+  &--main {
+    display: block;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    color: $color-primary;
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+    &.light {
+      font-weight: 200;
+    }
+  }
+  &.light {
+    font-weight: 200;
+  }
+  &.alt-color {
+    color: $color-primary;
+  }
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+}
+
+.heading-tertiary {
+  font-family: $default-header-style;
+  font-size: 1.9rem;
+  font-weight: 400;
+  &.light {
+    font-weight: 200;
+  }
+  &.alt-color {
+    color: $color-primary;
+    font-style: italic;
+  }
+  &--sub {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 200;
+    color: $color-primary;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
+}
+.heading-highlight {
+  color: $color-primary;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+a {
+  text-decoration: none;
+  color: $color-black;
+}
+
+.paragraph,
+p,
+ul {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+blockquote {
+  font-family: $default-font-style;
+  font-size: 5rem;
+}
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.breadcrumb a {
+  color: $color-primary;
+}
+.fad {
+  --fa-primary-color: $color-white;
+  --fa-secondary-opacity: 0.5;
+  --fa-primary-opacity: 1;
+}
+.underscores {
+  &::after {
+    content: "";
+    border-bottom: 1px solid $color-primary;
+    width: 2rem;
+    display: block;
+    padding-top: 1rem;
+  }
+}
+.overscores {
+  &::before {
+    content: "";
+    border-bottom: 1px solid $color-primary;
+    width: 2rem;
+    display: block;
+    padding-bottom: 1rem;
+  }
+}
+.meta {
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: $default-header-style;
+  letter-spacing: 0.15rem;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
+}

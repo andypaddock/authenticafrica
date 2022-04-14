@@ -1,0 +1,40 @@
+// COLORS
+$color-primary: #7E8C5E;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #4186ba;
+$color-primary-bg: #131815;
+$color-primary-bg-alt: #e6e4df;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #e6e4df;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #272b20;
+$color-text: #ffffff;
+
+// FONT
+$default-font-style: 'Raleway', sans-serif;
+$default-header-style: 'Cormorant Garamond', serif;
+$alt-font-style: "PT Serif", serif;
+$alt-font-header: "IM Fell French Canon", serif;
+$default-font-size: 1.5rem;
+
+// GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 2rem;
+
+$fastEffect: all 0.5s ease-in-out;
+$slowEffect: all 1s ease-in-out;
+$crawlEffect: all 3s ease-in-out;
