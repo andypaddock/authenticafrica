@@ -186,14 +186,21 @@
   }
 }
 .simple-text-block {
+  p {
+    &:first-of-type {
+      font-size: 2.2rem;
+    }
+  }
   .call-out {
-    float: right;
-    width: 25rem;
-    margin-right: -10rem;
-    margin-top: -5rem;
+    text-align: center;
     color: $color-primary;
-    font-weight: 400;
-    padding: 2rem;
+    font-family: $default-header-style;
+    margin-bottom: 3rem;
+    padding: 0 4rem;
+    p {
+      font-size: 3rem;
+    }
+    
   }
   .heading-secondary {
     font-family: $alt-font-header;

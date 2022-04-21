@@ -15,7 +15,7 @@ $noMobile = get_sub_field('hide_on_mobile');?>
         <?php if ( ! empty( $terms ) && is_array( $terms ) ) {
     foreach ( $terms as $term ) { ?>
         <?php $styleImage = get_field('hero_image', $term); ?>
-        <div class="image-block" style="background-image: url(<?php echo $styleImage['url']; ?>)">
+        <div class="image-block tile" style="background-image: url(<?php echo $styleImage['url']; ?>)">
 
             <div class="style-text">
                 <a href="<?php echo esc_url(get_term_link($term)); ?>">

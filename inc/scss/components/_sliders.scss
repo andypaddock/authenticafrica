@@ -1,0 +1,58 @@
+.prop-slider {
+    .property-style-block {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      grid-auto-rows: minmax(100px, auto);
+      grid-template-areas: "top main" "lt main" "lt main";
+      grid-gap: 2rem;
+      .style-text {
+        // padding: 5rem 0 0 5rem;
+        grid-area: lt;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        a {
+          color: $color-white;
+          border: 1px solid $color-white;
+        }
+      }
+      .style-image {
+        grid-area: main;
+        @include backgroundCover;
+      }
+      
+    }
+    .owl-nav {
+      padding: 0.5rem 2rem;
+      .owl-prev {
+        left: 3.5rem;
+        top: 0;
+        color: $color-white;
+        border: 1px solid $color-white;
+        border-radius: 50%;
+        background: none;
+      }
+      .owl-next {
+        left: 7rem;
+        right: unset;
+        top: 0;
+        color: $color-white;
+        border: 1px solid $color-white;
+        border-radius: 50%;
+      }
+    }
+    &.switch  {
+        .property-style-block {
+            grid-template-columns: 3fr 2fr;
+            grid-template-areas: "main top" "main lt" "main lt";
+        }
+        
+        .owl-nav {
+            position: absolute;
+            top: 0;
+            left: 50%;
+
+        }
+        
+    }
+  }

@@ -4,7 +4,7 @@
  *
  * @package authenticafrica
  */
-get_header('tax'); 
+get_header(); 
 
 $term = get_queried_object();
 
@@ -14,24 +14,6 @@ $heroSize = get_field('hero_section_size', $term);
 $color = get_field('color', $term);
 $mapImage = get_field('destination_map', $term);
 ?>
-<!-- <header class="header map-hero">
-    <div class="hero map-popup">
-    </div>
-    <a href="#" class="map-close">&times;</a>
-    <img src="<?php echo $mapImage['sizes'] ['large']; ?>" />
-    <div class="map-link">
-        <a class="map-link" href="#">
-            <i class="far fa-bars"></i>
-            <span>See Whole Map</span>
-        </a>
-    </div>
-
-
-</header> -->
-
-<header class="header <?php echo $heroSize; ?>">
-    <?php get_template_part('template-parts/taxhero');?>
-</header>
 
 <!--closes in footer.php-->
 
@@ -57,6 +39,49 @@ $mapImage = get_field('destination_map', $term);
 </section>
 
 
+
+
+<?php $bgColor = get_field('bg_colour');
+$noMobile = get_field('hide_on_mobile');
+$titleStyle = get_field ('style');?>
+<section
+    class="simple-text <?php if($bgColor == true): echo 'alt-bg'; endif; ?> <?php the_field('margin_size'); ?> <?php if($noMobile == true): echo 'no-mob'; endif; ?>"
+    <?php if( get_field('section_id') ): ?>id="<?php the_field('section_id'); ?>" <?php endif; ?>>
+    <div class="row w40">
+
+        <div class="simple-text-block">
+            <div class="text">
+                <div class="title">
+                    <?php if($titleStyle == "h2"):?>
+                    <h3 class="heading-secondary underscores"><?php the_field('title', $term);?></h3>
+                    <?php elseif($titleStyle == "h3"):?>
+                    <h3 class="heading-tertiary overscores"><?php the_field('title', $term);?></h3>
+                    <?php endif; ?>
+                </div>
+                <div class="content-text">
+                    <?php
+                if( have_rows('paragraphs', $term) ):
+                while ( have_rows('paragraphs') ) : the_row();
+                $callOut = get_sub_field ('call_out', $term);?>
+
+
+                    <?php if($callOut == true):?>
+                    <div class="call-out"><?php the_sub_field('text_block', $term);?></div>
+                    <?php else:?>
+                    <?php the_sub_field('text_block', $term);?>
+                    <?php endif; ?>
+                    <?php endwhile; endif;?>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
 <section class="section-title" id="gallery">
     <div class="row centre-line w50">
         <div class="line"></div>
@@ -64,7 +89,7 @@ $mapImage = get_field('destination_map', $term);
     </div>
     <div class="row w40">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub"><?php the_field('gallery_sub_title', $term); ?></span>
+            <span class="heading-secondary--sub"><?php echo single_term_title(); ?></span>
             <span class="heading-secondary--main"><?php the_field('gallery_title', $term); ?></span>
         </h2>
     </div>
@@ -96,11 +121,6 @@ if( $images ): ?>
     </div>
 </section>
 
-<?php if($term->parent == 0):?>
-
-<?php $queried_object = get_queried_object();
-$term_id = $queried_object->term_id; ?>
-
 <section class="section-title" id="areas">
     <div class="row centre-line w50">
         <div class="line"></div>
@@ -108,11 +128,44 @@ $term_id = $queried_object->term_id; ?>
     </div>
     <div class="row w40">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub"><?php the_field('areas_sub_title', $term); ?></span>
-            <span class="heading-secondary--main">Areas of <?php echo single_term_title(); ?></span>
+            <span class="heading-secondary--sub"><?php echo single_term_title(); ?></span>
+            <span class="heading-secondary--main">When to go</span>
         </h2>
     </div>
 </section>
+<section class="when-to-go">
+    <div class="row w80">
+        <?php 
+$terms = get_field('when_to_go');
+if( $terms ): ?>
+        <div class="prop-slider switch owl-carousel owl-theme">
+            <?php foreach( $terms as $term ): ?>
+            <div class="property-style-block ">
+                <?php $styleImage = get_field('hero_image', $term); ?>
+                <div class="style-text">
+                    <h2 class="heading-secondary underscores"><?php echo esc_html($term->name); ?></h2>
+                    <p><?php echo esc_html( $term->description ); ?></p>
+                </div>
+                <div class="style-image" style="background-image: url(<?php echo $styleImage['url']; ?>)">
+
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
+
+    </div>
+</section>
+
+
+
+
+<?php if($term->parent == 0):?>
+
+<?php $queried_object = get_queried_object();
+$term_id = $queried_object->term_id; ?>
+
+
 <section class="section-property-styles"
     <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
     <div class="row">
@@ -180,13 +233,9 @@ endif;
         <div class="itin-display-block grid-layout3">
             <?php
                 $args = array(
-                    'post_type' => 'properties',
                     'tax_query' => array(
-                    'relation' => 'AND',
                         array(
                             'taxonomy' => 'destination',
-                            'field' => 'slug',
-                            'terms' => array( $term->slug )
                         ),
                     )
                 );

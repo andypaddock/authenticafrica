@@ -69,47 +69,7 @@
     }
   }
 }
-.prop-slider {
-  .property-style-block {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-auto-rows: minmax(100px, auto);
-    grid-template-areas: "top main" "lt main" "lt main";
-    grid-gap: 2rem;
-    .style-text {
-      // padding: 5rem 0 0 5rem;
-      grid-area: lt;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      a {
-        color: $color-black;
-        border: 1px solid $color-black;
-      }
-    }
-    .style-image {
-      grid-area: main;
-      @include backgroundCover;
-    }
-  }
-  .owl-nav {
-    padding: 0.5rem 2rem;
-    .owl-prev {
-      left: 3.5rem;
-      top: 0;
-      color: $color-black;
-      border: 1px solid $color-black;
-      background: none;
-    }
-    .owl-next {
-      left: 7rem;
-      right: unset;
-      top: 0;
-      color: $color-black;
-      border: 1px solid $color-black;
-    }
-  }
-}
+
 .itin-slider {
   .itin-slide-block {
     display: flex;
