@@ -202,3 +202,53 @@
     }
   }
 }
+.pre-itin-block {
+  .row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+      .image-block {
+          @include backgroundCover;
+          height: 30rem;
+          justify-content: center;
+          .style-text {
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              a{
+                  color: $color-white;
+              }
+          }
+          a.arrow {
+color: $color-white;
+text-align: right;
+          }
+      }
+      .itin-text {
+        color: $color-black;
+        .meta {
+          color: $color-black;
+        }
+      }
+      .itin-link {
+        
+        padding: 3rem;
+        .button {
+          display: block;
+          border-radius: 3rem;
+        }
+      }
+      .destination-meta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .main {
+          font-weight: 700;
+          border-right: 1px solid $color-primary;
+        }
+        .sub {
+          padding-left: 2rem;
+        }
+      }
+  }
+}

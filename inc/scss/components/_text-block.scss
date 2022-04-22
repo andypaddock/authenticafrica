@@ -257,3 +257,15 @@
     }
   }
 }
+.included-text {
+  &.twocol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem;
+    font-weight: 400;
+    @include respond(phone) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

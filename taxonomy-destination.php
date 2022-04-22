@@ -13,6 +13,7 @@ $term = get_queried_object();
 $heroSize = get_field('hero_section_size', $term);
 $color = get_field('color', $term);
 $mapImage = get_field('destination_map', $term);
+$term_id = $term->term_id;
 ?>
 
 <!--closes in footer.php-->
@@ -162,9 +163,6 @@ if( $terms ): ?>
 
 <?php if($term->parent == 0):?>
 
-<?php $queried_object = get_queried_object();
-$term_id = $queried_object->term_id; ?>
-
 
 <section class="section-property-styles"
     <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
@@ -214,18 +212,115 @@ endif;
 </section>
 <?php endif; ?>
 
-<section class="section-title" id="lodges">
+<section class="section-title alt-bg" id="other-destinations">
     <div class="row centre-line w50">
         <div class="line"></div>
         <div></div>
     </div>
     <div class="row w40">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub"><?php the_field('lodges_sub_title', $term); ?></span>
-            <span class="heading-secondary--main">Lodges in <?php echo single_term_title(); ?></span>
+            <span class="heading-secondary--sub">Other</span>
+            <span class="heading-secondary--main">Destinations</span>
         </h2>
     </div>
 </section>
+
+
+<section class="destination-block alt-bg" id="<?php the_sub_field('section_id'); ?>">
+
+    <div class="row <?php the_sub_field('column_size'); ?>">
+
+        <div class="cust-post-grid tri-col">
+
+            <?php $terms = get_terms( array(
+                        'taxonomy' => 'destination',
+                        'exclude' => $term_id,
+					    'hide_empty' => false,
+					) ); ?>
+
+            <?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ): ?>
+
+
+
+            <?php foreach ( $terms as $term ): ?>
+
+            <?php $destImage = get_field('hero_image',$term); ?>
+            <div class="post-item tile <?php echo ' ' . $term->slug; ?>">
+                <a href="<?php echo esc_url( get_term_link( $term ) ); ?>">
+                    <div class="post-image" style="background-image: url(<?php echo $destImage['url']; ?>)">
+
+                    </div>
+                </a>
+                <div class="post-text">
+                    <span class="meta"><?php the_field('sub_header',$term); ?></span>
+                    <h2 class="heading-secondary">
+                        <a href="<?php echo esc_url( get_term_link( $term ) ); ?>">
+                            <span
+                                class="heading-secondary--main underscores"><?php echo esc_html( $term->name ); ?></span>
+                        </a>
+                    </h2>
+                    <p><?php the_field('short_description',$term); ?></p>
+                </div>
+                <div class="post-link">
+                    <a class="button outline" href="<?php echo esc_url( get_term_link( $term ) ); ?>">
+                        Find Out more<i class="fa-light fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <?php endforeach; ?>
+
+
+
+            <?php endif; ?>
+
+
+
+
+
+
+            <?php 
+$destinations = get_sub_field('select_dest_block_items');
+if( $destinations ): ?>
+            <?php foreach( $destinations as $destination ): ?>
+            <?php $destImage = get_field('hero_image',$destination); ?>
+            <div class="post-item tile <?php echo ' ' . $destination->slug; ?>">
+                <a href="<?php echo esc_url( get_term_link( $destination ) ); ?>">
+                    <div class="post-image" style="background-image: url(<?php echo $destImage['url']; ?>)">
+
+                    </div>
+                </a>
+                <div class="post-text">
+                    <span class="meta"><?php the_field('sub_header',$destination); ?></span>
+                    <h2 class="heading-secondary">
+                        <a href="<?php echo esc_url( get_term_link( $destination ) ); ?>">
+                            <span
+                                class="heading-secondary--main underscores"><?php echo esc_html( $destination->name ); ?></span>
+                        </a>
+                    </h2>
+                    <p><?php the_field('short_description',$destination); ?></p>
+                </div>
+                <div class="post-link">
+                    <a class="button outline" href="<?php echo esc_url( get_term_link( $destination ) ); ?>">
+                        Find Out more<i class="fa-light fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
 
 
 <section class="lodges">

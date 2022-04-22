@@ -109,6 +109,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/seasons-blocks');?>
 <?php elseif( get_row_layout() == 'activities-block' ):?>
 <?php get_template_part('template-parts/activities-blocks');?>
+<?php elseif( get_row_layout() == 'pre-itins-block' ):?>
+<?php get_template_part('template-parts/pre-itineraries-block');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

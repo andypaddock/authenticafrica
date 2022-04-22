@@ -55,6 +55,15 @@ main {
 }
 .alt-bg {
   background: $color-primary-bg-alt;
+  color: $color-black;
+  .line {
+    border-right: 1px solid $color-white;
+  }
+  .heading-secondary {
+    &--sub,&--main {
+      color: $color-white;
+    }
+  }
 }
 .centre-line {
   display: flex;

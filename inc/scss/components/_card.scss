@@ -247,6 +247,7 @@
     .post-text {
       padding: 2rem 4rem;
       flex: 1;
+      color: $color-black;
     }
     .post-link {
       padding: 0 4rem 2rem;
@@ -278,6 +279,7 @@
     .post-text {
       padding: 2rem 4rem;
       flex: 1;
+      color: $color-black;
       .meta {
         color: $color-primary;
         &.underscores {
@@ -328,4 +330,20 @@
   color: #000 !important;
   background-color: transparent !important;
   pointer-events: none;
+}
+.itin-block {
+  background: $color-white;
+  display: flex;
+  flex-direction: column;
+  .itin-image {
+    @include backgroundCover;
+    height: 25rem;
+  }
+  .itin-text {
+    padding: 1rem 3rem;
+    flex: 1;
+    a {
+      color: $color-black;
+    }
+  }
 }
