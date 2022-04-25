@@ -111,6 +111,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/activities-blocks');?>
 <?php elseif( get_row_layout() == 'pre-itins-block' ):?>
 <?php get_template_part('template-parts/pre-itineraries-block');?>
+<?php elseif( get_row_layout() == 'lrg_card_links' ):?>
+<?php get_template_part('template-parts/lrg-card-links');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

@@ -87,11 +87,7 @@ if( $featured_posts ): ?>
         <?php 
     // Reset the global post object so that the rest of the page works correctly.
     wp_reset_postdata(); ?>
-        <div class="row centre-line w50">
-            <div class="line"></div>
-            <div></div>
-        </div>
-        <a href="#" id="loadMore">Load More</a>
+        
         <?php endif; ?>
     </div>
 </section>

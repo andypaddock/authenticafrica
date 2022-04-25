@@ -347,3 +347,30 @@
     }
   }
 }
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  .card-wrapper {
+    background: $color-white;
+    display: flex;
+    flex-direction: column;
+    .card-text {
+      padding: 3rem;
+      color: $color-black;
+      flex: 1;
+    }
+    .card-image {
+      @include backgroundCover;
+      height: 25rem;
+    }
+    .card-link {
+      padding: 0 3rem 3rem;
+      .button {
+        color: $color-black;
+        border-color: $color-black;
+        display: block;
+      }
+    }
+  }
+}
