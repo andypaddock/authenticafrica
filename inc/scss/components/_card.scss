@@ -374,3 +374,30 @@
     }
   }
 }
+.image-card-container {
+  display: flex;
+  grid-gap: 2rem;
+  .image-card {
+    flex-grow: 1;
+    padding: 3rem;
+    text-align: center;
+    @include backgroundCover;
+    min-height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .button {
+      color: $color-white;
+      border-color: $color-white;
+      max-width: 30rem;
+      margin: 0 auto;
+    }
+  }
+}
+.browse-links {
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+  color: $color-primary;
+  padding: 5rem 0;
+}

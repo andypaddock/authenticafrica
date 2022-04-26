@@ -4,6 +4,10 @@
  * @package kitjames
  */
 ?>
+<?php $linkSwitch = get_field('force_display', 'options');?>
+<?php if($linkSwitch == true): ?>
+<?php get_template_part('template-parts/force-site-wide-image-links');?>
+<?php endif; ?>
 <div class="filler-block"></div>
 <div class="footer-message"><?php $footerSwitch = get_field('footer_override');
             if ($footerSwitch == 'alternate'): ?>

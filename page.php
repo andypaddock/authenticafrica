@@ -113,6 +113,10 @@ get_header(); ?>
 <?php get_template_part('template-parts/pre-itineraries-block');?>
 <?php elseif( get_row_layout() == 'lrg_card_links' ):?>
 <?php get_template_part('template-parts/lrg-card-links');?>
+<?php elseif( get_row_layout() == 'pop_dest_block' ):?>
+<?php get_template_part('template-parts/pop-dest-block');?>
+<?php elseif( get_row_layout() == 'site_wide_image_links' ):?>
+<?php get_template_part('template-parts/site-wide-image-links');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
