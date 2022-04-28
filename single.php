@@ -5,6 +5,8 @@
  * @package hiddenafrica
  */
 get_header(); ?>
+<?php $queried_object = get_queried_object();
+$term_id = $queried_object->term_id; ?>
 
 <?php if (!is_front_page()): ?>
 <div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
@@ -109,6 +111,10 @@ get_header(); ?>
 <?php get_template_part('template-parts/pre-itineraries-block');?>
 <?php elseif( get_row_layout() == 'whats_included' ):?>
 <?php get_template_part('template-parts/whats_included');?>
+<?php elseif( get_row_layout() == 'activity-linked-itins' ):?>
+<?php get_template_part('template-parts/activity_linked_itins');?>
+<?php elseif( get_row_layout() == 'linked-seasons' ):?>
+<?php get_template_part('template-parts/linked_seasons');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

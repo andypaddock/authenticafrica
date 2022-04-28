@@ -373,6 +373,9 @@
       }
     }
   }
+  &.double {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .image-card-container {
   display: flex;

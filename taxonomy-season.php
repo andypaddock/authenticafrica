@@ -42,7 +42,24 @@ $color = get_field('color', $term);
 
 <?php get_template_part('template-parts/activity_season');?>
 
+<?php get_template_part('template-parts/destination_season');?>
+
+<section class="section-title alt-bg" id="areas">
+    <div class="row centre-line w50">
+        <div class="line"></div>
+        <div></div>
+    </div>
+    <div class="row w40">
+        <h2 class="heading-secondary">
+            <span class="heading-secondary--sub">other</span>
+            <span class="heading-secondary--main">Times of the year</span>
+        </h2>
+    </div>
+</section>
+
 <?php get_template_part('template-parts/seasons-blocks');?>
+
+
 
 
 

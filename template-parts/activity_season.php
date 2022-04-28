@@ -1,8 +1,8 @@
-<section class="activity-season-block">
+<section class="linked-activity-block">
     <div class="row">
 
 
-        <div class="safaritype-grid filter-grid">
+        <div class="cards-container">
 
 
             <?php 
@@ -34,64 +34,28 @@ if ( $query->have_posts() ) {
 
             <?php $mainImage = get_the_post_thumbnail_url(get_the_ID(),'large'); ?>
 
-            <div class="mix tile filter-item">
+            <div class="card-wrapper tile">
 
-                <div class="filter-item--image" style="background-image: url(<?php echo $mainImage; ?>)">
+                <div class="card-image" style="background-image: url(<?php echo $mainImage; ?>)">
                 </div>
-                <div class="filter-item--text">
+                <div class="card-text">
                     <h3 class="heading-tertiary">
                         <span class="heading-tertiary--sub">
                             <?php echo taxonomy_hierarchy(); ?>
                         </span>
 
-                        <span class="heading-tertiary--main"><a
+                        <span class="heading-tertiary--main underscores"><a
                                 href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
                     </h3>
-                    <div class="right_arrow">
-                        <div class="arrow bounce">
-                            <a class="fal fa-chevron-right fa-2x" href="<?php the_permalink(); ?>"></a>
-                        </div>
-                    </div>
+                </div>
+                <div class="card-link">
+                    <a class="button" href="<?php the_permalink(); ?>">Find out more<i
+                            class="fa-light fa-chevron-right"></i></a>
                 </div>
             </div>
             <?php }
 }
 ?>
-
-
-
-
-
-
-
-
-            <!-- <?php $terms = get_the_terms( $post->ID , 'season' );?>
-            <?php if ( $terms != null ){
-foreach( $terms as $term ) {
-$term_link = get_term_link( $term, 'season' );
-$mainImage = get_the_post_thumbnail_url(get_the_ID(),'large'); ?>
-
-            <div class="mix tile filter-item">
-
-                <div class="filter-item--image" style="background-image: url(<?php echo $mainImage; ?>)">
-                </div>
-                <div class="filter-item--text">
-                    <h3 class="heading-tertiary">
-                        <span class="heading-tertiary--sub">
-                            <?php echo taxonomy_hierarchy(); ?>
-                        </span>
-
-                        <span class="heading-tertiary--main"><a
-                                href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
-                    </h3>
-                    <div class="right_arrow">
-                        <div class="arrow bounce">
-                            <a class="fal fa-chevron-right fa-2x" href="<?php the_permalink(); ?>"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php unset($term); } } ?> -->
         </div>
     </div>
 </section>

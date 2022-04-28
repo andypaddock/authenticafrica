@@ -117,6 +117,10 @@ get_header(); ?>
 <?php get_template_part('template-parts/pop-dest-block');?>
 <?php elseif( get_row_layout() == 'site_wide_image_links' ):?>
 <?php get_template_part('template-parts/site-wide-image-links');?>
+<?php elseif( get_row_layout() == 'activity-linked-itins' ):?>
+<?php get_template_part('template-parts/activity_linked_itins');?>
+<?php elseif( get_row_layout() == 'activity-linked-seasons' ):?>
+<?php get_template_part('template-parts/activity_linked_seasons');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
