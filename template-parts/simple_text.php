@@ -8,13 +8,6 @@ $titleStyle = get_sub_field ('style');?>
 
         <div class="simple-text-block">
             <div class="text">
-                <div class="title">
-                    <?php if($titleStyle == "h2"):?>
-                    <h3 class="heading-secondary underscores"><?php the_sub_field('title');?></h3>
-                    <?php elseif($titleStyle == "h3"):?>
-                    <h3 class="heading-tertiary overscores"><?php the_sub_field('title');?></h3>
-                    <?php endif; ?>
-                </div>
                 <div class="content-text">
                     <?php
                 if( have_rows('paragraphs') ):

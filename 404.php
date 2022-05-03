@@ -8,20 +8,15 @@
 get_header();
 ?>
 
-<div id="primary" class="content-area">
-    <main id="main" class="site-main">
+<section class="error-404 not-found">
 
-        <section class="error-404 not-found">
+    <span class="loader"></span>
+    <h1 class="heading-primary--main">ERROR 4<span>0</span>4</h1>
+    <h3 class="error-copy robo-font">Page not found</h3>
 
-            <div class="flex-container">
-                <h1 class="error-title alt-font">Error 404</h1>
-                <h3 class="error-copy robo-font">Page not found</h3>
-            </div>
 
-        </section><!-- .error-404 -->
 
-    </main><!-- #main -->
-</div><!-- #primary -->
+</section><!-- .error-404 -->
 
 <?php
 get_footer();

@@ -18,55 +18,29 @@ $noMobile = get_sub_field('hide_on_mobile');?><section
     <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
     <div class="row <?php the_sub_field('column_size'); ?>">
 
-    <div class="cards-container double">
+    
 
 
-<?php 
+<div class="seasons-carousel owl-carousel owl-theme">
+<?php $terms = get_the_terms( $post->ID, 'season' );?>
+        <?php if ( ! empty( $terms ) && is_array( $terms ) ) {
+    foreach ( $terms as $term ) { ?>
+        <?php $styleImage = get_field('hero_image', $term); ?>
+        <div class="image-block" style="background-image: url(<?php echo $styleImage['url']; ?>)">
 
-$args = array(
-'post_type' => 'itineraries',
-'order' => 'ASC',
-'hide_empty' => false,
-'meta_query' => array(
-    array(
-      'key'     => 'linked_activities',
-      'value'   => $term_id,
-      'compare' => 'LIKE'
-    )
-  )
-);
-
-$query = new WP_Query($args);
-
-if ( $query->have_posts() ) {
-while ( $query->have_posts() ) {
-$query->the_post(); ?>
-
-<?php $mainImage = get_the_post_thumbnail_url(get_the_ID(),'large'); ?>
-
-<div class="card-wrapper tile">
-
-    <div class="card-image" style="background-image: url(<?php echo $mainImage; ?>)">
+        <div class="style-text">
+                <a href="<?php echo esc_url(get_term_link($term)); ?>">
+                    <h2 class="heading-secondary">
+                        <span class="heading-secondary--main"><?php echo esc_html($term->name); ?></span>
+                    </h2>
+                </a>
+        <a class="arrow" href="<?php echo esc_url(get_term_link($term)); ?>"><i
+                        class="fa-light fa-chevron-right"></i></a></div>
     </div>
-    <div class="card-text">
-        <h3 class="heading-tertiary">
-            <span class="heading-tertiary--sub">
-                <?php echo taxonomy_hierarchy(); ?>
-            </span>
-
-            <span class="heading-tertiary--main underscores"><a
-                    href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
-        </h3>
-    </div>
-    <div class="card-link">
-        <a class="button" href="<?php the_permalink(); ?>"><?php the_field('cta_text'); ?><i
-                class="fa-light fa-chevron-right"></i></a>
-    </div>
-</div>
-<?php }
-}
-?>
+        <?php
+    }
+} ?>
 </div>
 
-    </div>
+
 </section>

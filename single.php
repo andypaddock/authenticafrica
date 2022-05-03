@@ -27,6 +27,8 @@ $term_id = $queried_object->term_id; ?>
 <?php while( have_rows('main_page_elements') ): the_row(); ?>
 <?php if( get_row_layout() == 'faq_blocks' ): ?>
 <?php get_template_part('template-parts/faqblock');?>
+<?php elseif( get_row_layout() == 'other-activities' ):?>
+<?php get_template_part('template-parts/other_activity');?>
 <?php elseif( get_row_layout() == 'main_cat_links' ): ?>
 <?php get_template_part('template-parts/main-boxes-page');?>
 <?php elseif( get_row_layout() == 'text_blocks' ):?>
@@ -115,7 +117,9 @@ $term_id = $queried_object->term_id; ?>
 <?php get_template_part('template-parts/activity_linked_itins');?>
 <?php elseif( get_row_layout() == 'linked-seasons' ):?>
 <?php get_template_part('template-parts/linked_seasons');?>
+
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
+
 <?php get_footer(); ?>

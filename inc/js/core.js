@@ -83,6 +83,24 @@ jQuery(document).ready(function ($) {
       }
     }
   });
+  $(".seasons-carousel").owlCarousel({
+    loop: false,
+    responsive: {
+      0:{
+        items:1,
+        nav: false
+      },
+      600:{
+        items:2,
+        nav: false
+      },
+      1000:{
+        items:4,
+        nav: true,
+        dots: false
+      }
+    }
+  });
   $(".signature-itins").owlCarousel({
     loop: true,
     margin: 32,

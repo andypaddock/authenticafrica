@@ -396,6 +396,10 @@
       margin: 0 auto;
     }
   }
+  &.triple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .browse-links {
   text-align: center;

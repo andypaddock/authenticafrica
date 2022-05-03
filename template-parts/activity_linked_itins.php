@@ -38,11 +38,8 @@ $args = array(
 
 $query = new WP_Query($args);
 
-if ( $query->have_posts() ) {
-while ( $query->have_posts() ) {
-$query->the_post(); ?>
-
-<?php $mainImage = get_the_post_thumbnail_url(get_the_ID(),'large'); ?>
+while ( $query->have_posts() ) : $query->the_post();
+$mainImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'large' ); ?>
 
 <div class="card-wrapper tile">
 
@@ -63,9 +60,7 @@ $query->the_post(); ?>
                 class="fa-light fa-chevron-right"></i></a>
     </div>
 </div>
-<?php }
-}
-?>
+<?php endwhile; wp_reset_query(); ?>
 </div>
 
     </div>

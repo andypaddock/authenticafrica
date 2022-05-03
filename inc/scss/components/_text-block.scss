@@ -115,6 +115,8 @@
   .image {
     @include backgroundCover;
     height: 35rem;
+    position: sticky;
+    top: 0;
   }
   &.row-reverse {
     flex-direction: row-reverse;
@@ -200,7 +202,6 @@
     p {
       font-size: 3rem;
     }
-    
   }
   .heading-secondary {
     font-family: $alt-font-header;

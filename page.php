@@ -121,6 +121,10 @@ get_header(); ?>
 <?php get_template_part('template-parts/activity_linked_itins');?>
 <?php elseif( get_row_layout() == 'activity-linked-seasons' ):?>
 <?php get_template_part('template-parts/activity_linked_seasons');?>
+<?php elseif( get_row_layout() == 'linked-seasons' ):?>
+<?php get_template_part('template-parts/linked_seasons');?>
+<?php elseif( get_row_layout() == 'other-activities' ):?>
+<?php get_template_part('template-parts/other_activity');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

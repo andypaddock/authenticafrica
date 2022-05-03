@@ -7,10 +7,12 @@
         <span class="browse-links">Or you could try browsing</span></div>
                         <div class="row">
                             <div class="image-card-container">
-                                
+                            <?php $imageShow = get_sub_field('number_show'); ?>
 
                                 <?php if( have_rows('link_block', 'options') ): ?>
-                                <?php while( have_rows('link_block', 'options') ): the_row(); $linkImage = get_sub_field('image','options'); ?>
+                                <?php while( have_rows('link_block', 'options') ): the_row(); $linkImage = get_sub_field('image','options');
+                                
+                                if(get_row_index() < $imageShow ): ?>
                                 <div class="image-card" style="background-image: url(<?php echo $linkImage['sizes']['medium']; ?>)">
                                 <h2 class="heading-secondary">
                         
@@ -31,6 +33,7 @@ if( $link ):
                                 <?php endif; ?>
 
                                 </div>
+                                <?php endif; ?>
                                 <?php endwhile; ?>
                                 <?php endif; ?>
 

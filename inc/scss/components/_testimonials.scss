@@ -1,6 +1,8 @@
 .testimonial-slider {
   text-align: center;
+  color: $color-primary;
   .quote {
+    padding: 2rem 6rem;
     .centre-line {
       display: flex;
       div {
@@ -8,9 +10,9 @@
       }
     }
     .line {
-      border-right: 1px solid $color-white;
-      height: 2rem;
-      margin: 2rem 0;
+      border-right: 1px solid $color-primary;
+      height: 1.5rem;
+      margin: 1rem 0;
     }
   }
   .quote-cite {

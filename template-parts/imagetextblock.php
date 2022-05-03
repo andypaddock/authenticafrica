@@ -15,24 +15,20 @@ $noMobile = get_sub_field('hide_on_mobile');
             class="grid-item tile image-text-block <?php if($rowReverse == true): echo 'row-reverse'; else: echo 'row-default'; endif; ?>">
             <div class="image" style="background-image: url(<?php echo $image['sizes']['large']; ?>)">
             </div>
-            <div class="text">
-                <div class="title">
-                    <h3 class="heading-secondary underscores"><?php the_sub_field('title');?></h3>
-                </div>
-                <h3 class="heading-tertiary alt-color"><?php the_sub_field('sub_title');?></h3>
-                <div class="content-text <?php if($readMore == true): echo 'readmore'; endif; ?>">
+            <div class="simple-text-block">
+                <div class="content-text">
+                <?php
+                if( have_rows('paragraphs') ):
+                while ( have_rows('paragraphs') ) : the_row();
+                $callOut = get_sub_field ('call_out');?>
+
+
+                    <?php if($callOut == true):?>
+                    <div class="call-out"><?php the_sub_field('text');?></div>
+                    <?php else:?>
                     <?php the_sub_field('text');?>
-                    <?php 
-$link = get_sub_field('link');
-if( $link ): 
-    $link_url = $link['url'];
-    $link_title = $link['title'];
-    $link_target = $link['target'] ? $link['target'] : '_self';
-    ?>
-                    <a class="button <?php the_sub_field('link_style');?>" href="<?php echo esc_url( $link_url ); ?>"
-                        target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><i
-                            class="fa-light fa-chevron-right"></i></a>
                     <?php endif; ?>
+                    <?php endwhile; endif;?>
                 </div>
             </div>
         </div>

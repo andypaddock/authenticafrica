@@ -9,7 +9,7 @@
 
             <label>
                 <span class="heading italic"><?php the_sub_field('title'); ?></span>
-                <span class="heading underscores"><?php the_sub_field('central'); ?></span>
+                <span class="heading"><?php the_sub_field('central'); ?></span>
                 <i class="fal fa-chevron-right fa-2x"></i>
             </label>
             <div class="content mb2">
