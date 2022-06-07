@@ -5,14 +5,8 @@
         <div class="cards-container">
 
 
-            <?php 
-
-$terms = wp_get_post_terms( $post->ID, 'season'); 
-$terms_ids = [];
-
-foreach ( $terms as $term ) {
-    $terms_ids[] = $term->term_id;
-}
+            <?php $queried_object = get_queried_object();
+$term_id = $queried_object->term_id;
 
 $args = array(
     'post_type' => 'itineraries',
@@ -21,7 +15,7 @@ $args = array(
         array(
             'taxonomy' => 'season',
             'field'    => 'term_id',
-            'terms'    => $terms_ids
+            'terms'    => $term_id
         )
     ),
 );

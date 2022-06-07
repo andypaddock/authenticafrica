@@ -3,6 +3,7 @@
     <div class="row">
         <?php 
 $images = get_sub_field('upload_images');
+$count = 0;
 if( $images ): ?>
         <div id="parent">
             <?php foreach( $images as $image ): ?>
@@ -13,13 +14,17 @@ if( $images ): ?>
                 </a>
                 <p><?php echo esc_html($image['caption']); ?></p>
             </div>
-            <?php endforeach; ?>
+            <?php $count++; endforeach; ?>
         </div>
         <?php endif; ?>
-        <div class="row centre-line w50">
-            <div class="line"></div>
-            <div></div>
+        <?php if ($count > 3):?>
+        <div id="viewmorelink">
+            <div class="row centre-line w50">
+                <div class="line"></div>
+                <div></div>
+            </div>
+            <a id="viewAll" class="view-more-btn" href="#">View More</a>
         </div>
-        <a id="viewAll" class="view-more-btn" href="#">View More</a>
+        <?php endif; ?>
     </div>
 </section>

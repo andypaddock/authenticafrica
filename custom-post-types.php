@@ -165,33 +165,7 @@ function taxonomy_seasons() {
         'rewrite'           => array( 'slug' => 'season', 'hierarchical' => true )
     ));
 }
-// ====== Type Property Style
-function taxonomy_propertystyle() {
 
-    $labels = array(
-        'name'              => _x( 'Property Style', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Property Style', 'taxonomy singular name' ),
-        'search_items'      => __( 'Search Property Styles'   ),
-        'all_items'         => __( 'All Property Styles'     ),
-        'parent_item'       => __( 'Parent Property Style'   ),
-        'parent_item_colon' => __( 'Parent Property Style:'  ),
-        'edit_item'         => __( 'Edit Property Style'     ),
-        'update_item'       => __( 'Update Property Style'   ),
-        'add_new_item'      => __( 'Add New Property Style'  ),
-        'new_item_name'     => __( 'New Property Style' ),
-        'menu_name'         => __( 'Property Style'         )
-    );
-
-    register_taxonomy( 'propertystyle', array(  'properties', 'itineraries'), array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'has_archive'       => true,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'propertystyle', 'hierarchical' => true )
-    ));
-}
 
 
 
@@ -201,4 +175,3 @@ function taxonomy_propertystyle() {
 add_action( 'init', 'taxonomy_seasons', 0 );
 add_action( 'init', 'taxonomy_safaritype', 0 );
 add_action( 'init', 'taxonomy_destination', 0 );
-add_action( 'init', 'taxonomy_propertystyle', 0 );
