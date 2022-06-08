@@ -17,7 +17,7 @@ if( $images ): ?>
             <?php $count++; endforeach; ?>
         </div>
         <?php endif; ?>
-        <?php if ($count > 3):?>
+        <?php if ($count > 6):?>
         <div id="viewmorelink">
             <div class="row centre-line w50">
                 <div class="line"></div>

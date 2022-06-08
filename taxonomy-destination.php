@@ -103,6 +103,7 @@ $titleStyle = get_field ('style');?>
     <div class="row">
         <?php 
 $images = get_field('upload_images', $term);
+$count = 0;
 if( $images ): ?>
         <div id="parent">
             <?php foreach( $images as $image ): ?>
@@ -112,15 +113,18 @@ if( $images ): ?>
                         alt="<?php echo esc_attr($image['alt']); ?>" />
                 </a>
             </div>
-            <?php endforeach; ?>
+            <?php $count++; endforeach; ?>
         </div>
         <?php endif; ?>
-        <div class="row centre-line w50">
-            <div class="line"></div>
-            <div></div>
-
+        <?php if ($count > 6):?>
+        <div id="viewmorelink">
+            <div class="row centre-line w50">
+                <div class="line"></div>
+                <div></div>
+            </div>
+            <a id="viewAll" class="view-more-btn" href="#">View More</a>
         </div>
-        <a id="viewAll" class="view-more-btn" href="#">View More</a>
+        <?php endif; ?>
     </div>
 </section>
 
