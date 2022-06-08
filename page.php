@@ -125,6 +125,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/linked_seasons');?>
 <?php elseif( get_row_layout() == 'other-activities' ):?>
 <?php get_template_part('template-parts/other_activity');?>
+<?php elseif( get_row_layout() == 'itin_accor_block' ):?>
+<?php get_template_part('template-parts/itin_accor_block');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

@@ -60,8 +60,17 @@ main {
     border-right: 1px solid $color-white;
   }
   .heading-secondary {
-    &--sub,&--main {
+    &--sub,
+    &--main {
       color: $color-white;
+    }
+  }
+  .post-item {
+    .heading-secondary {
+      &--sub,
+      &--main {
+        color: $color-black;
+      }
     }
   }
 }

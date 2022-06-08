@@ -237,7 +237,7 @@
       li {
         list-style: none;
         padding: 0 2rem;
-        border-left: 1px solid $color-white;
+        border-left: 0.5px solid $color-white;
         line-height: 1;
         &:first-of-type {
           border: none;
@@ -262,7 +262,6 @@
       justify-content: space-around;
     }
     &__contacts {
-      
     }
     &__image {
       justify-self: center;
@@ -303,7 +302,7 @@ menu {
       li {
         display: inline-block;
         padding: 0 2rem;
-        border-left: 1px solid $color-white;
+        border-left: 0.5px solid $color-white;
         line-height: 1.1;
         &:first-of-type {
           padding-left: 0;
@@ -322,7 +321,7 @@ menu {
           // border-bottom: 3px solid rgba(255, 255, 255, 0);
           transition: ease-out 0.25s;
           text-transform: uppercase;
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           letter-spacing: 0.15rem;
           font-weight: 400;
           &::after {
@@ -364,7 +363,7 @@ menu {
   box-shadow: 0 7px 10px rgba(0, 0, 0, 0.4);
 }
 .top-bar {
-background: $color-primary-bg;
+  background: $color-primary-bg;
   position: fixed;
   top: 0;
   left: 0;

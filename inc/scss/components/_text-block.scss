@@ -1,5 +1,9 @@
 .section-text {
   text-align: center;
+  .row {
+    @include backgroundCover;
+    background-position: bottom;
+  }
   .heading-tertiary {
     font-family: $alt-font-style;
     font-style: italic;

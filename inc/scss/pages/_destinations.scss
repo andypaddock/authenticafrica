@@ -8,7 +8,10 @@
     .tri-col {
       .post-item {
         .post-link {
-          padding: 2rem 4rem;
+          padding: 4rem 4rem;
+          .button {
+            display: block;
+          }
         }
       }
     }

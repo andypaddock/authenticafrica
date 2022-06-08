@@ -1,7 +1,9 @@
 <?php $bgColor = get_field('bg_colour', 'options');
 $textBGImage = get_field('background_image', 'options');
 $backgroundSwitch = get_field('select_background', 'options');
-            if ($backgroundSwitch == 'full'): ?>
+$switchOff = get_sub_field('show_start'); 
+if ($switchOff == '1'): ?>
+<?php if ($backgroundSwitch == 'full'): ?>
 <section class="section-text para <?php if($bgColor == true): echo 'alt-bg'; endif; ?>"
     style="background-image: linear-gradient(rgba(0, 0, 0, <?php the_field('image_overlay', 'options'); ?>), rgba(0, 0, 0, <?php the_field('image_overlay', 'options'); ?>)), url(<?php echo $textBGImage['url']; ?>)">
     <div class="row">
@@ -53,3 +55,4 @@ if( $link ):
                         </div>
                     </div>
                 </section>
+                <?php endif; ?>

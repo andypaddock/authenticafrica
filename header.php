@@ -112,7 +112,20 @@ if( $link ):
         </nav>
         <header class="header <?php the_field('hero_section_size'); ?>">
 
+            <?php if (is_tax('destination')):?>
+            <?php get_template_part('template-parts/desthero');?>
+            <?php elseif (is_tax('safaritype')):?>
+            <?php get_template_part('template-parts/taxhero');?>
+            <?php elseif (is_tax('propertystyle')):?>
+            <?php get_template_part('template-parts/taxhero');?>
+            <?php elseif (is_singular('itineraries')):?>
+            <?php get_template_part('template-parts/itinhero');?>
+            <?php elseif (is_single()):?>
+            <?php get_template_part('template-parts/posthero');?>
+
+            <?php else:?>
             <?php get_template_part('template-parts/hero');?>
+            <?php endif; ?>
 
         </header>
 

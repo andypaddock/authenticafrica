@@ -53,7 +53,12 @@
   }
 }
 .archive .header {
-  height: 50vh;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  .hero {
+    flex: 1;
+  }
 }
 .text-fade {
   position: relative;
