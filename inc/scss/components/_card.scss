@@ -351,6 +351,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+  }
   .card-wrapper {
     background: $color-white;
     display: flex;
