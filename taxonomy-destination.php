@@ -143,8 +143,13 @@ if( $images ): ?>
 <section class="when-to-go">
     <div class="row w80">
         <?php 
-$terms = get_field('when_to_go');
-if( $terms ): ?>
+$seasons = get_field('when_to_go',$term);
+$queried_object = get_queried_object();
+$term_id = $queried_object->term_id; ?>
+        <?php $args = array( 'taxonomy' => 'season', 'order' => 'ASC', 'hide_empty' => false, 'hierarchical' => true, 'include' => $seasons// 'parent' => 0,
+    );
+    $terms = get_terms( $args );
+    ?>
         <div class="prop-slider switch owl-carousel owl-theme">
             <?php foreach( $terms as $term ): ?>
             <div class="property-style-block ">
@@ -159,64 +164,8 @@ if( $terms ): ?>
             </div>
             <?php endforeach; ?>
         </div>
-        <?php endif; ?>
-
     </div>
 </section>
-
-
-
-
-<?php if($term->parent == 0):?>
-
-
-<section class="section-property-styles"
-    <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
-    <div class="row">
-
-        <div class="prop-slider owl-carousel owl-theme">
-
-            <?php $terms = get_terms(
-    array(
-        'taxonomy'   => 'destination',
-        'hide_empty' => false,
-        'parent'     => $term_id,
-    )
-);?>
-            <?php if ( ! empty( $terms ) && is_array( $terms ) ) {
-    foreach ( $terms as $term ) { ?>
-            <div class="property-style-block">
-                <?php $styleImage = get_field('hero_image', $term); ?>
-                <div class="style-text">
-                    <h2 class="heading-secondary underscores">
-
-                        <span class="heading-secondary--main"><?php echo esc_html($term->name); ?></span>
-                        <span class="heading-secondary--sub light"><?php
-$parent = get_term_by( 'id', $term->parent, get_query_var( 'taxonomy' ) );
-if($parent):
-    echo $parent->name;
-endif;
-?></span>
-                    </h2>
-
-                    <p><?php the_field('short_description', $term); ?></p>
-                    <a class="button outline" href="<?php echo esc_url(get_term_link($term)); ?>">Find Out More<i
-                            class="fa-light fa-chevron-right"></i></a>
-                </div>
-                <div class="style-image" style="background-image: url(<?php echo $styleImage['url']; ?>)">
-
-                </div>
-            </div>
-            <?php
-    }
-} ?>
-
-
-
-        </div>
-    </div>
-</section>
-<?php endif; ?>
 
 <section class="section-title alt-bg" id="other-destinations">
     <div class="row centre-line w50">
@@ -407,8 +356,8 @@ echo ''.$terms.'';
                     'relation' => 'AND',
                         array(
                             'taxonomy' => 'destination',
-                            'field' => 'slug',
-                            'terms' => array( $term->slug )
+                            'field' => 'ID',
+                            'terms' => array( $term_id )
                         ),
                     )
                 );

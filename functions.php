@@ -367,3 +367,16 @@ function taxonomy_hierarchy() {
 		}
     }	
 }
+
+add_filter('acf/fields/taxonomy/query', 'my_acf_fields_taxonomy_query', 10, 3);
+function my_acf_fields_taxonomy_query( $args, $field, $post_id ) {
+
+    // Show 40 terms per AJAX call.
+    $args['number'] = 40;
+
+    // Order by most used.
+    $args['orderby'] = 'count';
+    $args['order'] = 'DESC';
+
+    return $args;
+}
